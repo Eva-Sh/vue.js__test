@@ -15,6 +15,7 @@ new Vue({
                     $('.success').addClass('success--opacity');
                 }
                 return false;
+                $('.success').removeClass('success--opacity');
             });
         }
     }

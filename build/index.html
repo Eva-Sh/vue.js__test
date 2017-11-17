@@ -12,7 +12,7 @@
 <body>
     <div id="app" class="container">
         <div class="form form-group" :class="{'has-error': errors.has('text')}">
-            <input class="form__item form__item--text" v-validate="{ required: true, min: 7, max: 20, regex: /[0-9]+/ }" name="text" type="text" v-model="text">
+            <input class="form__item form__item--text" v-validate="{ required: true, min: 7, max: 20, regex: /\w\w[A-Za-z]L\d/ }" name="text" type="text" v-model="text">
             <button @click="validateMe" class="form__item form__item--submit">Submit</button>
         </div>
         <ul class="error-list" v-if="errors.has('text')">
