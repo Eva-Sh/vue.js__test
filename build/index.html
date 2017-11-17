@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="form form-group" :class="{'has-error': errors.has('text')}">
+            <input class="form__item form__item--text" v-validate="{ required: true, min: 7, max: 20, regex: /[0-9]+/ }" name="text" type="text" v-model="text">
+            <button @click="validateMe" class="form__item form__item--submit">Submit</button>
+        </div>
+        <ul class="error-list" v-if="errors.has('text')">
+            <li v-for="error in errors.collect('text')">{{ error }}</li>
+        </ul>
+        <div class="success">Congratulations</div>
+    </div>
+<script type="text/javascript" src="scripts/vendor.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+
+</body>
+</html>
